@@ -22,4 +22,15 @@ public class ProductController {
         Product product = productService.get(id);
         return ProductResponse.from(product);
     }
+
+    @PutMapping("/api/v1/products/{id}")
+    public ProductResponse update(@PathVariable Long id, @RequestBody ProductRequest request) {
+        Product product = productService.update(id, request);
+        return ProductResponse.from(product);
+    }
+
+    @DeleteMapping("/api/v1/products/{id}")
+    public void delete(@PathVariable Long id) {
+        productService.delete(id);
+    }
 }
