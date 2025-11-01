@@ -4,6 +4,7 @@ import com.sample.ecommerce.product.Product;
 import com.sample.ecommerce.product.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
 @RestController
@@ -32,5 +33,20 @@ public class ProductController {
     @DeleteMapping("/api/v1/products/{id}")
     public void delete(@PathVariable Long id) {
         productService.delete(id);
+    }
+
+    @PostMapping("/api/v1/products/{id}/thumbnail")
+    public ProductResponse uploadThumbnail(
+            @PathVariable Long id,
+            @RequestParam("file") MultipartFile file
+    ) {
+        Product product = productService.uploadThumbnail(id, file);
+        return ProductResponse.from(product);
+    }
+
+    @DeleteMapping("/api/v1/products/{id}/thumbnail")
+    public ProductResponse deleteThumbnail(@PathVariable Long id) {
+        Product product = productService.deleteThumbnail(id);
+        return ProductResponse.from(product);
     }
 }

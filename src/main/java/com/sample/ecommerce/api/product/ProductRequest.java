@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 public record ProductRequest(
         String title,
         BigDecimal listPrice,
-        BigDecimal discountPrice,
-        String thumbnailUrl
+        BigDecimal discountPrice
 ) {
 }

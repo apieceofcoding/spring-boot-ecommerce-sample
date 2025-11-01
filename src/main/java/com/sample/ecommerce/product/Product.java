@@ -29,8 +29,7 @@ public class Product {
     public void update(
             String title,
             BigDecimal listPrice,
-            BigDecimal discountPrice,
-            String thumbnailUrl
+            BigDecimal discountPrice
     ) {
         if (title != null && !title.isBlank()) {
             this.title = title;
@@ -44,9 +43,10 @@ public class Product {
             checkDiscountPrice(listPrice != null ? listPrice : this.listPrice, discountPrice);
             this.discountPrice = discountPrice;
         }
-        if (thumbnailUrl != null && !thumbnailUrl.isBlank()) {
-            this.thumbnailUrl = thumbnailUrl;
-        }
+    }
+
+    public void updateThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
     }
 
     public void delete() {
@@ -71,8 +71,7 @@ public class Product {
     public static Product create(
             String title,
             BigDecimal listPrice,
-            BigDecimal discountPrice,
-            String thumbnailUrl
+            BigDecimal discountPrice
     ) {
         if (title == null || title.isBlank()) {
             throw new IllegalArgumentException("Title cannot be null or blank");
@@ -91,7 +90,6 @@ public class Product {
         product.title = title;
         product.listPrice = listPrice;
         product.discountPrice = discountPrice;
-        product.thumbnailUrl = thumbnailUrl;
         return product;
     }
 }
