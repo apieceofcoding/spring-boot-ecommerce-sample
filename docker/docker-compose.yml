@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:18
+    container_name: postgres-ecommerce
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admindev
+      POSTGRES_DB: ecommerce
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_ecommerce:/var/lib/postgresql
+
+volumes:
+  postgres_ecommerce:
