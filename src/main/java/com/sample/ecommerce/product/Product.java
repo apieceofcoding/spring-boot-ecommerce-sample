@@ -2,7 +2,6 @@ package com.sample.ecommerce.product;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import org.hibernate.annotations.ColumnDefault;
 
 import java.math.BigDecimal;
 

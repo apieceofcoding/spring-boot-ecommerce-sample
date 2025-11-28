@@ -15,11 +15,11 @@ public class CartItem {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false, foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_option_id")
+    @JoinColumn(name = "product_option_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private ProductOption productOption;
 
     @Column(nullable = false)

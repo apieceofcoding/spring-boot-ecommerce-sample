@@ -11,7 +11,7 @@ curl -X POST http://localhost:8080/api/v1/cart-items \
   -H "Content-Type: application/json" \
   -d '{
     "productId": 1,
-    "productOptionId": 1,
+    "productOptionId": 2,
     "quantity": 1
   }'
 
