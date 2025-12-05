@@ -1,6 +1,8 @@
 spring:
   application:
     name: ecommerce
+  config:
+    import: optional:classpath:application-payment.yml
   datasource:
     url: jdbc:postgresql://localhost:5432/ecommerce
     username: admin
@@ -20,3 +22,6 @@ minio:
   access-key: admin
   secret-key: admindev
   bucket: ecommerce
+
+tosspayments:
+  base-url: https://api.tosspayments.com

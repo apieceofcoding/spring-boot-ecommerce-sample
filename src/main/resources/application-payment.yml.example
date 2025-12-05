@@ -1,0 +1,5 @@
+tosspayments:
+  # TossPayments Secret Key
+  # 테스트: test_sk_XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  # 운영: live_sk_XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  secret-key: your_secret_key_here
